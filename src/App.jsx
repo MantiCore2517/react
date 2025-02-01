@@ -3,6 +3,13 @@ import styles from "./app.module.css";
 import data from "./data.json";
 
 export const App = () => {
+	const steps = [...data].map(({ id, title }, index) => (
+		<li className={styles["steps-item"]} key={id}>
+			<button className={styles["steps-item-button"]}>{index + 1}</button>
+			{title}
+		</li>
+	));
+
 	// Можно задать 2 состояния — steps и activeIndex
 
 	// И определить 3 обработчика: Клик назад, Клик вперед, Начать сначала
@@ -19,7 +26,15 @@ export const App = () => {
 						Контент соответственный шагу. Сейчас активен шаг 3
 					</div>
 					<ul className={styles["steps-list"]}>
-						{/* Выводите <li> с помощью массива steps и метода map(), подставляя в разметку нужные значения и классы */}
+						{steps}
+						{/* {steps.map(({ id, title }, index) => (
+							<li className={styles["steps-item"]} key={id}>
+								<button className={styles["steps-item-button"]}>
+									{index + 1}
+								</button>
+								{title}
+							</li>
+						))} */}
 						<li className={styles["steps-item"] + " " + styles.done}>
 							{/* Для того, чтобы вычислить необходимый класс используйте активный индекс, текущий индекс, а также тернарные операторы */}
 							<button className={styles["steps-item-button"]}>1</button>
