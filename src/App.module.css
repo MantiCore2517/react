@@ -4,3 +4,78 @@
 	padding: 2rem;
 	text-align: center;
 }
+.container {
+	margin-top: 5rem;
+	display: grid;
+	grid-template-columns: repeat(4, 100px);
+	grid-template-rows: repeat(6, 60px);
+	grid-template-areas:
+		"result result result result"
+		"output output output output"
+		"number1 number2 number3 operator011"
+		"number4 number5 number6 operator012"
+		"number7 number8 number9 ."
+		"operator014 number0 operator013 .";
+	justify-content: center;
+
+	justify-items: center;
+	align-items: center;
+}
+.number {
+	width: 90px;
+	height: 50px;
+	font: inherit;
+	color: inherit;
+}
+.number1 {
+	grid-area: number1;
+}
+.number2 {
+	grid-area: number2;
+}
+.number3 {
+	grid-area: number3;
+}
+.number4 {
+	grid-area: number4;
+}
+.number5 {
+	grid-area: number5;
+}
+.number6 {
+	grid-area: number6;
+}
+.number7 {
+	grid-area: number7;
+}
+.number8 {
+	grid-area: number8;
+}
+.number9 {
+	grid-area: number9;
+}
+.number0 {
+	grid-area: number0;
+}
+.operator011 {
+	grid-area: operator011;
+}
+.operator012 {
+	grid-area: operator012;
+}
+.operator013 {
+	grid-area: operator013;
+}
+.operator014 {
+	grid-area: operator014;
+}
+.output {
+	grid-area: output;
+	justify-self: right;
+	color: rgba(255, 255, 255, 0.87);
+}
+.result {
+	grid-area: result;
+	justify-self: left;
+	color: rgba(255, 255, 255, 0.87);
+}
